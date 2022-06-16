@@ -8,7 +8,6 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 5vw;
     min-height: 100vh;
@@ -52,17 +51,17 @@ hr {
 .dragNdrop{
     box-shadow: 5px 5px 45px  rgb(120, 226, 120);
     height: 65vh;
-    width: 65vw;
+    width: 59vw;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-}
+    }
 
 .message{
     font-size: 2.6rem;
+    text-align: center;
 }
 .green-button {
     background: rgb(80, 167, 80);

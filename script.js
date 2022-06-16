@@ -5,7 +5,7 @@ const Message = document.querySelector(".message"),
         button = document.querySelector(".green-button"),
         input = document.querySelector("input"),
         error = document.querySelector(".errorMessage"),
-        errorButton = document.querySelector("close-button");
+        errorButton = document.querySelector(".close-button");
 
 button.onclick = () => {
     input.click();
@@ -60,13 +60,12 @@ function showFile() {
     else {
         //console.log("This data type is not supported");
         Message.textContent = "Arrastra tus archivos aquí";
-        error.classList.removeClass("hidden");
+        error.classList.remove("hidden");
     }
 
     
 }
 
-errorButton.onclick = () => {
-    error.classList.addClass("hidden")
-    console.log("hola");
-}
+errorButton.addEventListener("click", function() {
+    error.classList.add("hidden")
+});
