@@ -2,10 +2,10 @@
 let file;
 
 const Message = document.querySelector(".message"),
-        button = document.querySelector(".green-button"),
-        input = document.querySelector("input"),
-        error = document.querySelector(".errorMessage"),
-        errorButton = document.querySelector(".close-button");
+    button = document.querySelector(".green-button"),
+    input = document.querySelector("input"),
+    error = document.querySelector(".errorMessage"),
+    errorButton = document.querySelector(".close-button");
 
 button.onclick = () => {
     input.click();
@@ -44,15 +44,26 @@ dropArea.addEventListener("drop", (event) => {
 function showFile() {
     let fileType = file.type;
 
-    let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+    let validExtensions = ["image/jpeg", "image/jpg", "image/png", "application/pdf", "application/msword ", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "video/mp4", "audio/mp3", "application/x-zip-compressed", "application/x-rar-compressed"];
 
     if (validExtensions.includes(fileType)) {
         // console.log("This is a " + fileType);
         let fileReader = new FileReader();
         fileReader.onload = () => {
             let fileURL = fileReader.result;
-            imgTag = `<img src="${fileURL}" alt="">`;
-            dropArea.innerHTML = imgTag;
+            if (fileType.includes("image")) {
+                imgTag = `
+                <div archivos>
+                <i>Cerrar</i>
+                <img src="${fileURL}" alt="">
+                </div>
+                `;
+                dropArea.innerHTML = imgTag;
+            }
+
+            else {
+                dropArea.innerHTML = `<p>${file.name}.${file}</p>`
+            }
         }
         fileReader.readAsDataURL(file);
     }
@@ -63,9 +74,9 @@ function showFile() {
         error.classList.remove("hidden");
     }
 
-    
+
 }
 
-errorButton.addEventListener("click", function() {
+errorButton.addEventListener("click", function () {
     error.classList.add("hidden")
 });

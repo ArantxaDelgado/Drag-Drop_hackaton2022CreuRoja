@@ -8,11 +8,12 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 5vw;
     min-height: 100vh;
     position: absolute;
-    padding: 2rem;
+    width: 100vw;
 }
 
 h1{
@@ -40,6 +41,10 @@ hr {
     margin-top: 2.5rem;
 }
 
+i {
+    position: absolute;
+}
+
 .upload{
     display: flex;
     flex-direction: column;
@@ -60,8 +65,9 @@ hr {
     }
 
 .message{
-    font-size: 2.6rem;
+    font-size: 2rem;
     text-align: center;
+    text-transform: uppercase;
 }
 .green-button {
     background: rgb(80, 167, 80);
